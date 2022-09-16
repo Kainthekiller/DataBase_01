@@ -2,11 +2,10 @@ package com.example.demo.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "NickTable")
@@ -20,7 +19,7 @@ public class Nick {
 
     @JsonFormat(pattern = "yyyy-MM-dd")
     @Column(name = "Date")
-    Date date;
+    LocalDate date;
 
 
     public Long getId() {
@@ -39,11 +38,12 @@ public class Nick {
         this.title = title;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
+
 }
